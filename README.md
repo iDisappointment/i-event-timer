@@ -1,4 +1,5 @@
 # i-event-timer
+
 [![npm](https://img.shields.io/npm/dt/i-event-timer.svg?style=for-the-badge)](https://npmjs.com/package/i-event-timer)
 [![npm](https://img.shields.io/npm/v/i-event-timer.svg?style=for-the-badge)](https://npmjs.com/package/i-event-timer)
 
@@ -36,7 +37,6 @@ countDown.on("notify", () => {
   console.log("Count down will be end in 30 seconds.");
 });
 ```
-
 
 ## Usage
 
