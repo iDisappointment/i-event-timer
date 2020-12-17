@@ -12,7 +12,7 @@ Its a basic timer that triggers events based on time left
 
 # Example
 
-```
+```javascript
 const Timer = require("i-event-timer");
 
 // First Parameter is seconds you want the timer to go for.
