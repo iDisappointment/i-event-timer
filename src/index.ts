@@ -4,11 +4,11 @@ class Timer extends EventEmitter {
   /**
    * Creates a Timer.
    * @param {Number} seconds The number of seconds until Timer finishes
-   * @param {Number} endSoon The number of seconds left you would like to have an event on (default 0)
+   * @param {Number} notify The number of seconds left you would like to have an event on (default 0)
    */
-  constructor(seconds: number, endSoon: number = 0) {
+  constructor(seconds: number, notify: number = 0) {
     super();
-    this.endSoon = endSoon
+    this.notify = notify
     this.timeRequested = seconds;
     this.secondsLeft = seconds;
   }
@@ -26,8 +26,8 @@ class Timer extends EventEmitter {
         this.emit("end");
       }
       
-      if (this.secondsLeft == this.endSoon && this.endSoon != 0) {
-        this.emit("end-soon");
+      if (this.secondsLeft == this.notify && this.notify != 0) {
+        this.emit("notify");
       }
       
     }, 1000);
