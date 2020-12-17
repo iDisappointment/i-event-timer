@@ -62,7 +62,7 @@ Starts the timer with the parameters you provided in the constructor.
 
 ---
 
-#### `Timer.stopTimer()`
+### `Timer.stopTimer()`
 
 Ex. `myTimer.stopTimer()`
 
@@ -70,7 +70,7 @@ Ends the timer and no more events will be fired, You are able to run `myTimer.st
 
 ---
 
-#### `Timer.getTimeleft()`
+### `Timer.getTimeleft()`
 
 Ex. `let secondsRemaining = myTimer.getTimeleft()`
 
@@ -78,7 +78,7 @@ Returns the remaining time before the timer ends.
 
 ---
 
-#### `Timer.setTime(seconds)`
+### `Timer.setTime(seconds)`
 
 Ex. `myTimer.setTime(120)`
 
@@ -86,7 +86,7 @@ Sets the timers remaining time to the seconds provided.
 
 ---
 
-#### `Timer.resetTime()`
+### `Timer.resetTime()`
 
 Ex. `myTimer.resetTime()`
 
