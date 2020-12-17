@@ -1,6 +1,6 @@
 # i-event-timer
-[![npm](https://img.shields.io/npm/dt/discord-command-parser.svg?style=for-the-badge)](https://npmjs.com/package/discord-command-parser)
-[![npm](https://img.shields.io/npm/v/discord-command-parser.svg?style=for-the-badge)](https://npmjs.com/package/discord-command-parser)
+[![npm](https://img.shields.io/npm/dt/i-event-timer.svg?style=for-the-badge)](https://npmjs.com/package/i-event-timer)
+[![npm](https://img.shields.io/npm/v/i-event-timer.svg?style=for-the-badge)](https://npmjs.com/package/i-event-timer)
 
 # What is it?
 
@@ -42,17 +42,15 @@ countDown.on("notify", () => {
 
 ---
 
-### `const myTimer = new Timer(seconds [, options])`
+### `Constructor`
 
-Ex. `myTimer.startTimer()`
+Ex. `const myTimer = new Timer(seconds [, options])`
 
 Starts the timer with the parameters you provided in the constructor.
 
 #### `options`
 
 - `notify: number = 0` - By default, notify will be disabled until you set what remaining time would you like to receive the event
-
----
 
 ---
 
@@ -64,15 +62,11 @@ Starts the timer with the parameters you provided in the constructor.
 
 ---
 
----
-
 #### `Timer.stopTimer()`
 
 Ex. `myTimer.stopTimer()`
 
 Ends the timer and no more events will be fired, You are able to run `myTimer.startTimer()` to start it again.
-
----
 
 ---
 
@@ -84,15 +78,11 @@ Returns the remaining time before the timer ends.
 
 ---
 
----
-
 #### `Timer.setTime(seconds)`
 
 Ex. `myTimer.setTime(120)`
 
 Sets the timers remaining time to the seconds provided.
-
----
 
 ---
 
