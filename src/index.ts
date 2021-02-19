@@ -4,11 +4,11 @@ class Timer extends EventEmitter {
   /**
    * Creates a Timer.
    * @param {Number} seconds The number of seconds until Timer finishes
-   * @param {Number} notify The number of seconds left you would like to have an event on (default 0)
+   * @param {Number[]} notify The number of seconds left you would like to have an event on takes an array of numbers Ex. [30, 50] (default disabled)
    */
-  constructor(seconds: number, notify: number = 0) {
+  constructor(seconds: number, notify: number[] = []) {
     super();
-    this.notify = notify
+    this.notify = notify;
     this.timeRequested = seconds;
     this.secondsLeft = seconds;
   }
@@ -25,11 +25,12 @@ class Timer extends EventEmitter {
         clearInterval(this.timer);
         this.emit("end");
       }
-      
-      if (this.secondsLeft == this.notify && this.notify != 0) {
-        this.emit("notify");
-      }
-      
+
+      this.notify.forEach((n: number) => {
+        if (this.secondsLeft + 1 == n && n != 0) {
+          this.emit("notify", n);
+        }
+      });
     }, 1000);
   }
 
@@ -45,15 +46,15 @@ class Timer extends EventEmitter {
    * Stop the timer from running
    * @return {Number} Seconds remaining
    */
-  getTimeleft(){
-    return this.secondsLeft
+  getTimeleft() {
+    return this.secondsLeft;
   }
 
   /**
    * Stop the timer from running
    */
   stopTimer() {
-    clearInterval(this.timer)
+    clearInterval(this.timer);
   }
 
   /**
@@ -62,6 +63,5 @@ class Timer extends EventEmitter {
   resetTime() {
     this.secondsLeft = this.timeRequested;
   }
-
 }
 module.exports = Timer;

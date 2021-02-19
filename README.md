@@ -9,7 +9,7 @@ Its a basic timer that triggers events based on time left
 
 # Installation
 
-`npm i i-event-timer`
+```npm i i-event-timer```
 
 # Example
 
@@ -17,8 +17,8 @@ Its a basic timer that triggers events based on time left
 const Timer = require("i-event-timer");
 
 // First Parameter is seconds you want the timer to go for.
-// Second Parameter is when you want to be notified
-const countDown = new Timer(60, 30);
+// Second Parameter is an array of times when you want to be notified
+const countDown = new Timer(60, [30, 10, 5, 4, 3, 2, 1]);
 
 countDown.startTimer();
 
@@ -33,8 +33,8 @@ countDown.on("end", () => {
 });
 
 // Notify Event fires when the timer has reached the time you wanted to be notified
-countDown.on("notify", () => {
-  console.log("Count down will be end in 30 seconds.");
+countDown.on("notify", (n) => {
+  console.log("Count down will be end in " + n + " seconds.");
 });
 ```
 
@@ -50,7 +50,7 @@ Starts the timer with the parameters you provided in the constructor.
 
 #### `options`
 
-- `notify: number = 0` - By default, notify will be disabled until you set what remaining time would you like to receive the event
+- `notify: number[] = []` - By default, notify will be disabled until you set what time would you like to receive the event. Ex [30,10]
 
 ---
 

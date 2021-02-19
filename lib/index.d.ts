@@ -5,7 +5,7 @@ declare class Timer extends EventEmitter {
      * @param {Number} seconds The number of seconds until Timer finishes
      * @param {Number} notify The number of seconds left you would like to have an event on (default 0)
      */
-    constructor(seconds: number, notify?: number);
+    constructor(seconds: number, notify?: number[]);
     /**
      * Start the Timer
      */
